@@ -1,21 +1,45 @@
 using System;
+using System.Globalization;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Prep4 World!");
+        int newNum = -1;
+        int sum = 0;
+        int largest;
+        int length;
 
-        List<int> myInts = new List<int>();
-        var otherInts = new List<int>();    // equivalent list declarations
+        float avg;
 
-        // add items
-        myInts.Add(10);
-        myInts.Add(3);
-        myInts.Add(45);
+        var numList = new List<int>();
 
-        foreach(var n in myInts) {
-            Console.WriteLine($"n = {n}");
+        Console.WriteLine("Enter a list of numbers, type 0 when finished.");
+        
+        while (newNum != 0) {
+            Console.Write("Enter number: ");
+            newNum = int.Parse(Console.ReadLine());
+            sum += newNum;
+
+            if (newNum != 0) {
+                numList.Add(newNum);
+            }
         }
-    }
+        
+        Console.WriteLine($"The sum is: {sum}");
+
+        length = numList.Count;
+        avg = (float)sum / length;
+        Console.WriteLine($"The average is: {avg}");
+
+        largest = numList[0];
+        foreach (int num in numList) {
+            if (num > largest) {
+                largest = num;
+            }
+        }
+
+        Console.WriteLine($"The largest number is: {largest}");
+        
+        }
 }

@@ -5,8 +5,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Prep3 World!");
-
         /*int count = 0;
         while (count < 10)
         {
